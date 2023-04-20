@@ -8,8 +8,16 @@ public class Building : MonoBehaviour
     public GameObject wallBlueprint;
     public GameObject wall;
 
+    public GameObject largeWallBlueprint;
+    public GameObject largeWall;
+    public GameObject slopeBlueprint;
+    public GameObject slopeO;
+
     [Header("Teck")]
     public Transform spawnpoint;
+    public Transform largeposition;
+    public Transform slope;
+
     private bool readyBuildWall = false;
 
     private bool inv1 = false;
@@ -26,10 +34,12 @@ public class Building : MonoBehaviour
     private void Start()
     {
         wallBlueprint.SetActive(false);
-        wall.SetActive(false);
-    }
+        largeWallBlueprint.SetActive(false);
+        slopeBlueprint.SetActive(false);
 
-    private void Update()
+}
+
+private void Update()
     {
 
         // new ver
@@ -146,6 +156,8 @@ public class Building : MonoBehaviour
         {
 
             wallBlueprint.SetActive(true);
+            largeWallBlueprint.SetActive(false);
+            slopeBlueprint.SetActive(false);
 
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -157,11 +169,29 @@ public class Building : MonoBehaviour
         }
         else if (inv2 == true)
         {
+            wallBlueprint.SetActive(false);
+            largeWallBlueprint.SetActive(true);
+            slopeBlueprint.SetActive(false);
 
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Instantiate(largeWall, largeposition.position, largeposition.rotation);
+                largeWall.SetActive(true);
+
+            }
         }
         else if (inv3 == true)
         {
+            wallBlueprint.SetActive(false);
+            largeWallBlueprint.SetActive(false);
+            slopeBlueprint.SetActive(true);
 
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Instantiate(slopeO, slope.position, slope.rotation);
+                largeWall.SetActive(true);
+
+            }
         }
         else if (inv4 == true)
         {
