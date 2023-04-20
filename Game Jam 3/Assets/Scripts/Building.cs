@@ -5,40 +5,195 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     [Header("Buildings")]
-    public GameObject blueprint;
+    public GameObject wallBlueprint;
     public GameObject wall;
 
     [Header("Teck")]
     public Transform spawnpoint;
     private bool readyBuildWall = false;
 
+    private bool inv1 = false;
+    private bool inv2 = false;
+    private bool inv3 = false;
+    private bool inv4 = false;
+    private bool inv5 = false;
+    private bool inv6 = false;
+    private bool inv7 = false;
+    private bool inv8 = false;
+    private bool inv9 = false;
+
+
     private void Start()
     {
-        blueprint.SetActive(false);
+        wallBlueprint.SetActive(false);
         wall.SetActive(false);
     }
 
     private void Update()
     {
-       if(readyBuildWall == true)
-        if (Input.GetKeyDown(KeyCode.F))
+
+        // new ver
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            inv1 = true;
+            inv2 = false;
+            inv3 = false;
+            inv4 = false;
+            inv5 = false;
+            inv6 = false;
+            inv7 = false;
+            inv8 = false;
+            inv9 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            inv1 = false;
+            inv2 = true;
+            inv3 = false;
+            inv4 = false;
+            inv5 = false;
+            inv6 = false;
+            inv7 = false;
+            inv8 = false;
+            inv9 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            inv1 = false;
+            inv2 = false;
+            inv3 = true;
+            inv4 = false;
+            inv5 = false;
+            inv6 = false;
+            inv7 = false;
+            inv8 = false;
+            inv9 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            inv1 = false;
+            inv2 = false;
+            inv3 = false;
+            inv4 = true;
+            inv5 = false;
+            inv6 = false;
+            inv7 = false;
+            inv8 = false;
+            inv9 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            inv1 = false;
+            inv2 = false;
+            inv3 = false;
+            inv4 = false;
+            inv5 = true;
+            inv6 = false;
+            inv7 = false;
+            inv8 = false;
+            inv9 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            inv1 = false;
+            inv2 = false;
+            inv3 = false;
+            inv4 = false;
+            inv5 = false;
+            inv6 = true;
+            inv7 = false;
+            inv8 = false;
+            inv9 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            inv1 = false;
+            inv2 = false;
+            inv3 = false;
+            inv4 = false;
+            inv5 = false;
+            inv6 = false;
+            inv7 = true;
+            inv8 = false;
+            inv9 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            inv1 = false;
+            inv2 = false;
+            inv3 = false;
+            inv4 = false;
+            inv5 = false;
+            inv6 = false;
+            inv7 = false;
+            inv8 = true;
+            inv9 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            inv1 = false;
+            inv2 = false;
+            inv3 = false;
+            inv4 = false;
+            inv5 = false;
+            inv6 = false;
+            inv7 = false;
+            inv8 = false;
+            inv9 = true;
+        }
+
+        if (inv1 == true)
+        {
+
+            wallBlueprint.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
                 Instantiate(wall, spawnpoint.position, spawnpoint.rotation);
                 wall.SetActive(true);
 
             }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            blueprint.SetActive(true);
-            readyBuildWall = true;
-
-}
-if (Input.GetKeyDown(KeyCode.Q))
-        {
-            blueprint.SetActive(false);
-            readyBuildWall = false;
 
         }
+        else if (inv2 == true)
+        {
+
+        }
+        else if (inv3 == true)
+        {
+
+        }
+        else if (inv4 == true)
+        {
+
+        }
+        else if (inv5 == true)
+        {
+
+        }
+        else if (inv6 == true)
+        {
+
+        }
+        else if (inv7 == true)
+        {
+
+        }
+        else if (inv8 == true)
+        {
+
+        }
+        else if (inv9 == true)
+        {
+
+        }
+
+        //new ver
+
+
     }
-    
 }
+        
+       
+    
+
