@@ -25,7 +25,7 @@ public class raycast : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 30))
+        if (Physics.Raycast(ray, out hit, 10))
         {
             if (hit.transform.tag == "scrap")   // picks up scrap
             {
